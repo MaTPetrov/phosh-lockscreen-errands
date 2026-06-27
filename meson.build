@@ -1,12 +1,7 @@
-sources = files(
-  'plugin.vala',
-  'errands-data.vala',
-  'errands-widget.vala'
+install_data('org.gnome.Phosh.Plugin.Errands.desktop',
+  install_dir: get_option('datadir') / 'phosh' / 'plugins'
 )
 
-shared_library('phosh-plugin-errands',
-  sources,
-  dependencies: [dep_phosh, dep_gtk, dep_json, dep_gee],
-  install: true,
-  install_dir: get_option('libdir') / 'phosh' / 'plugins'
+install_data('errands.css',
+  install_dir: get_option('datadir') / 'phosh' / 'plugins' / 'errands'
 )

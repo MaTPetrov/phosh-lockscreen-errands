@@ -1,0 +1,194 @@
+/* ============================================
+   Errands Lockscreen Plugin Styles
+   ============================================ */
+
+/* Основной контейнер виджета */
+.errands-widget {
+  padding: 12px 16px;
+  background: transparent;
+}
+
+/* Заголовок "Upcoming Tasks" */
+.errands-widget .title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+/* Контейнер для списка задач */
+.errands-widget .tasks-container {
+  spacing: 8px;
+}
+
+/* Отдельная задача */
+.errands-widget .task-item {
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.2s ease;
+}
+
+.errands-widget .task-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Чекбокс выполненной задачи */
+.errands-widget .completed {
+  color: #8ae234;
+  font-weight: bold;
+  font-size: 1.1em;
+  min-width: 20px;
+}
+
+/* Чекбокс невыполненной задачи */
+.errands-widget .pending {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.1em;
+  min-width: 20px;
+}
+
+/* Текст выполненной задачи */
+.errands-widget .completed-text {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Текст задачи (невыполненной) */
+.errands-widget .task-text {
+  color: #ffffff;
+  font-size: 1em;
+}
+
+/* Дата дедлайна */
+.errands-widget .due-date {
+  font-size: 0.85em;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 2px;
+}
+
+/* Просроченная задача */
+.errands-widget .overdue {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+/* Индикатор приоритета */
+.errands-widget .priority {
+  color: #ff9f43;
+  font-weight: bold;
+  font-size: 1.3em;
+  margin-left: 8px;
+}
+
+/* Разделитель между списками */
+.errands-widget .task-separator {
+  margin: 12px 0;
+  opacity: 0.2;
+  min-height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Заголовок списка задач */
+.errands-widget .list-header {
+  font-size: 1em;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 8px;
+  margin-bottom: 6px;
+}
+
+/* Цветной заголовок списка (если задан цвет) */
+.errands-widget .colored-label {
+  /* Цвет будет установлен динамически из кода */
+  font-weight: bold;
+}
+
+/* Контейнер подзадач */
+.errands-widget .subtasks-container {
+  margin-top: 6px;
+  margin-left: 28px;
+  spacing: 4px;
+}
+
+/* Отдельная подзадача */
+.errands-widget .subtask-item {
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.errands-widget .subtask-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Текст подзадачи */
+.errands-widget .subtask-text {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Плейсхолдер "Нет задач" */
+.errands-widget .placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  padding: 16px;
+  text-align: center;
+}
+
+/* Заметки к задаче (если есть) */
+.errands-widget .task-notes {
+  font-size: 0.85em;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* ============================================
+   Адаптация для разных размеров экрана
+   ============================================ */
+
+/* Компактный режим для маленьких экранов */
+@media (max-width: 400px) {
+  .errands-widget {
+    padding: 8px 12px;
+  }
+  
+  .errands-widget .task-item {
+    padding: 8px 10px;
+  }
+  
+  .errands-widget .title {
+    font-size: 1.1em;
+  }
+  
+  .errands-widget .task-text {
+    font-size: 0.95em;
+  }
+}
+
+/* ============================================
+   Специальные стили для Phosh lockscreen
+   ============================================ */
+
+/* Убедимся, что виджет хорошо смотрится на lockscreen */
+phosh-lockscreen .errands-widget {
+  background: transparent;
+}
+
+/* Анимация появления (если поддерживается) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.errands-widget .task-item {
+  animation: fadeIn 0.3s ease-out;
+}

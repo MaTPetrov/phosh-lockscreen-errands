@@ -1,0 +1,5 @@
+[Phosh Plugin]
+Name=Errands Tasks
+Description=Display upcoming tasks from Errands on lockscreen
+Module=libphosh-plugin-errands.so
+Priority=100
